@@ -8,6 +8,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8bcad51a-64c2-4986-a873-3a14a136ec20" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
+	<api-gateway:autodiscovery apiId="18929175" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="353c35dd-e6a0-40bb-a189-aa53d39c5f08" flowRef="api-ci-cd-testFlow" />
 	<flow name="api-ci-cd-testFlow" doc:id="e98a484b-307d-4c27-944d-a3641e04b2a1" >
 		<http:listener doc:name="Listener" doc:id="aef6e694-62ef-4813-aefe-42fc7d48bbb2" config-ref="HTTP_Listener_config" path="/test"/>
 		<logger level="INFO" doc:name="Logger" doc:id="6d233f2a-253d-4c82-a878-123ff2ed8266" message="#[payload]"/>
